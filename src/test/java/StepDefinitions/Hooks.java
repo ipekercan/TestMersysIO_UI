@@ -16,12 +16,12 @@ public class Hooks {
     @After
     public void quit(Scenario scenario) {
         if (scenario.isFailed()){
-            TakesScreenshot ts = ((TakesScreenshot) DriverManager.get());
+            TakesScreenshot ts = ((TakesScreenshot) DriverManager.Driver());
             byte[] tmpImg = ts.getScreenshotAs(OutputType.BYTES);
             scenario.attach(tmpImg, "image/png", scenario.getName());
         }
 
-        DriverManager.quit();
+        //DriverManager.quit();
     }
 
 }

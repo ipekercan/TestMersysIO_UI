@@ -17,7 +17,7 @@ public class DriverManager {
     public static ThreadLocal<String> threadBrowserName = new ThreadLocal<>();
     private static WebDriverWait wait;
 
-    public static WebDriver get() {
+    public static WebDriver Driver() {
         Locale.setDefault(new Locale("EN"));
         System.setProperty("user.language", "EN");
 

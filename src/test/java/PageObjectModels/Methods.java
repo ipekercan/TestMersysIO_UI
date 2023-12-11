@@ -6,7 +6,6 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.Select;
 import org.testng.Assert;
 
 public class Methods {
@@ -21,17 +20,17 @@ public class Methods {
     }
 
     public void jsClick(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) DriverManager.get();
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.Driver();
         js.executeScript ("arguments[0].click();", element);//
     }
 
     public void scrollToElement(WebElement element) {
-        JavascriptExecutor js = (JavascriptExecutor) DriverManager.get();
+        JavascriptExecutor js = (JavascriptExecutor) DriverManager.Driver();
         js.executeScript("arguments[0].scrollIntoView();", element);
     }
 
     public void hoverOver(WebElement element) {
-        Actions Actions=new Actions(DriverManager.get());
+        Actions Actions=new Actions(DriverManager.Driver());
         Action Action= Actions.moveToElement(element).build();
         Action.perform();
         DriverManager.getWait().until(ExpectedConditions.elementToBeClickable(element));
