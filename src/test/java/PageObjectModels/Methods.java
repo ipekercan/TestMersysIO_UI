@@ -44,4 +44,6 @@ public class Methods {
     public void wait(String locator) {
         DriverManager.getWait().until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
     }
+
+
 }
