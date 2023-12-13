@@ -1,6 +1,7 @@
 package PageObjectModels;
 
 import Utilities.DriverManager;
+import org.openqa.selenium.By;
 import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Action;
@@ -40,4 +41,7 @@ public class Methods {
         DriverManager.getWait().until(ExpectedConditions.textToBePresentInElement(element, value));
         Assert.assertTrue(element.getText().toLowerCase().contains(value.toLowerCase()));
 }
+    public void wait(String locator) {
+        DriverManager.getWait().until(ExpectedConditions.elementToBeClickable(By.xpath(locator)));
+    }
 }
